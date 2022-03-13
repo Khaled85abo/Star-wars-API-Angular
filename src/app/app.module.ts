@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ExtraInfoComponent } from './components/extra-info/extra-info.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -25,12 +25,10 @@ import { PlanetComponent } from './components/templates/planet/planet.component'
     SvgSpinnerComponent,
     ExtraInfoBtnsComponent,
     CharacterComponent,
-    PlanetComponent
+    PlanetComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
