@@ -1,0 +1,17 @@
+<aside>
+  <p>Details</p>
+  <div class="spinner-div hidden details">
+    <app-svg-spinner></app-svg-spinner>
+  </div>
+  <div class="selectedCharacter-details">
+    <app-character [singleChar]="singleChar"></app-character>
+  </div>
+  <div class="selectedCharacter-details"></div>
+  <section class="extra-info">
+    <app-extra-info-btns></app-extra-info-btns>
+    <div *ngIf="!planet" class="spinner-div extraInfo">
+      <app-svg-spinner></app-svg-spinner>
+    </div>
+    <app-planet *ngIf="planet" [planet]="planet"></app-planet>
+  </section>
+</aside>

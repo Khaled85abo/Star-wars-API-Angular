@@ -1,0 +1,34 @@
+<section class="characters">
+  <p>Characters</p>
+  <div class="spinner-div ul-loader" *ngIf="listSpinner">
+    <app-svg-spinner></app-svg-spinner>
+  </div>
+  <ul *ngIf="!listSpinner">
+    <li
+      *ngFor="let el of list; let indexOfelement = index"
+      (click)="renderCharacter(el, indexOfelement)"
+    >
+      {{ el.name }}
+    </li>
+  </ul>
+
+  <div class="page-controller">
+    <button
+      class="back-btn"
+      (click)="changePage('pre')"
+      [disabled]="page === 1"
+    >
+      ◀
+    </button>
+    <span>{{ page }}</span>
+    <span>/</span>
+    <span class="totalpages">{{ totalPages }}</span>
+    <button
+      class="forward-btn"
+      (click)="changePage('next')"
+      [disabled]="page === totalPages"
+    >
+      ▶
+    </button>
+  </div>
+</section>
